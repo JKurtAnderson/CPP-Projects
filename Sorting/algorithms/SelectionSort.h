@@ -11,7 +11,9 @@
 
 template <class T>
 static void selectionSort(T* array, size_t length){
-//    printArray(array, length, "unsorted");
+#if defined(DEBUGGING) && (DEBUGGING == 1)
+    printArray(array, length, "unsorted");
+#endif
     for(size_t selectionIndex = 0; selectionIndex < length - 1; selectionIndex++) {
         size_t iterationIndex = selectionIndex;
         size_t minimumIndex;
@@ -22,7 +24,9 @@ static void selectionSort(T* array, size_t length){
         }
         swap(array, selectionIndex, minimumIndex);
     }
-//    printArray(array, length, "sorted");
+#if defined(DEBUGGING) && (DEBUGGING == 1)
+    printArray(array, length, "sorted");
+#endif
 }
 
 #endif //SORTING_SELECTIONSORT_H
